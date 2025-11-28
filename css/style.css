@@ -1,0 +1,118 @@
+body {
+  background: #fff8e8;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6a00, #ff3d00);
+  color: #fff;
+  font-size: 22px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 184, 106);
+  object-fit: cover;
+}
+
+.hrLine {
+  color: rgb(255, 184, 106);
+}
+
+.navIcon:hover i,
+.navIcon:hover h6 {
+  color: rgb(246, 73, 0) !important;
+}
+
+.text-orange {
+  color: #ff6900;
+}
+.text-dark-orange {
+  color: RGB(225, 113, 0);
+}
+.text-red {
+  color: #fb2b37;
+}
+.text-red-alert {
+  color: RGB(158, 8, 18);
+}
+.text-blue {
+  color: #2b7fff;
+}
+.text-pink{
+  color: RGB(230, 0, 118);
+}
+.bg-light-yellow {
+  background: RGB(255, 249, 237);
+}
+.bg-light-yellow-one {
+  background-color: RGB(255, 251, 234);
+}
+.bg-light-red {
+  background: RGB(254, 242, 243);
+}
+.bg-light-orange {
+  background: RGB(255, 237, 212);
+}
+.bg-light-primary {
+  background: RGB(219, 234, 255);
+}
+.bg-light-warning {
+  background: RGB(255, 249, 194);
+}
+.bg-light-danger {
+  background: RGB(255, 226, 226);
+}
+.bg-light-success {
+  background: RGB(220, 252, 230);
+}
+.bg-light-pink {
+  background: RGB(252, 231, 244);
+}
+.bg-orange {
+  background: #ff6900;
+}
+
+
+.tab-item:hover {
+  color: rgb(45, 52, 62) !important;
+}
+
+.tab-item.active {
+  color: RGB(245, 77, 0) !important;
+  border-bottom: 2px solid RGB(245, 77, 0);
+}
+
+.tab-item.active i {
+  color: RGB(245, 77, 0) !important;
+}
+
+.btn-orange {
+  background: linear-gradient(135deg, rgb(255, 100, 0), rgb(252, 56, 48));
+  color: white;
+  border: none;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-orange:hover {
+  background: #ff5a00;
+  color: white;
+  transform: scale(1.07);
+}
+
+.my-box {
+  height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;  
+  scroll-behavior: smooth;
+}
+
+
+
+
+

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's For Dinner</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm border-bottom">
+      <div class="container-lg px-3">
+        <div class="d-flex align-items-center gap-2">
+          <div
+            class="icon-circle d-flex align-items-center justify-content-center"
+          >
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fw-bold fs-4 lh-2 mb-0">What's For Dinner</span>
+            <small class="text-secondary lh-1"
+              >Your daily meal inspiration</small
+            >
+          </div>
+        </div>
+
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <hr class="hrLine d-md-block d-lg-none" />
+          <ul
+            class="navbar-nav ms-auto d-flex align-items-lg-center gap-3 gap-lg-4 px-2 p-lg-0"
+          >
+            <li class="navIcon d-flex align-items-center cursor-pointer">
+              <i class="fa-solid fa-bookmark fs-5 text-secondary"></i>
+              <h6 class="d-md-block d-lg-none px-2 text-secondary">
+                Saved Recipes
+              </h6>
+            </li>
+
+            <li class="navIcon d-flex align-items-center cursor-pointer">
+              <i class="fa-solid fa-clock-rotate-left fs-5 text-secondary"></i>
+              <h6 class="d-md-block d-lg-none px-2 text-secondary">Recents</h6>
+            </li>
+
+            <li class="navIcon d-flex align-items-center cursor-pointer">
+              <i class="fa-solid fa-gear fs-5 text-secondary"></i>
+              <h6 class="d-md-block d-lg-none px-2 text-secondary">Settings</h6>
+            </li>
+
+            <li class="navIcon d-flex align-items-center cursor-pointer">
+              <img
+                src="/images/avatar-4.jpg"
+                class="profile-img"
+                alt="profile"
+              />
+              <h6 class="d-md-block d-lg-none px-2 py-2 text-secondary">
+                Profile
+              </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container bg-white rounded-4 shadow-sm mt-5 mb-5 p-0">
+      <div class="row g-0">
+        <div class="col-lg-4">
+          <div class="position-relative overflow-hidden w-100 h-100">
+            <img
+              id="recipe-img-desktop"
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              class="w-100 h-100 object-fit-cover d-none d-lg-block rounded-start-4"
+            />
+
+            <img
+              id="recipe-img-mobile"
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              class="w-100 h-100 object-fit-cover d-block d-lg-none rounded-top-4"
+            />
+
+            <div
+              class="position-absolute top-0 start-0 mt-3 ms-3 bg-white px-3 py-2 rounded-pill shadow d-flex align-items-center gap-1 fw-semibold"
+            >
+              <i class="fa-solid fa-star text-warning"></i>
+              <div id="rating">4.9</div>
+              <span class="text-secondary fw-light"
+                >( <span id="reviews">187</span> reviews )</span
+              >
+            </div>
+
+            <div
+              class="position-absolute bottom-0 start-50 translate-middle-x mb-3 w-100"
+            >
+              <div
+                class="bg-white rounded-4 shadow py-4 px-4 d-flex justify-content-around text-center mx-3"
+              >
+                <div>
+                  <i class="fa-solid fa-clock fs-4 text-orange"></i>
+                  <div class="small text-secondary">Prep Time</div>
+                  <div id="prepTime" class="fw-bold fs-6">10 min</div>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-fire-burner fs-4 text-red"></i>
+                  <div class="small text-secondary">Cook Time</div>
+                  <div id="cookTime" class="fw-bold fs-6">15 min</div>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-users fs-4 text-blue"></i>
+                  <div class="small text-secondary">Servings</div>
+                  <div id="servings" class="fw-bold fs-6">2 people</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 p-5">
+          <div class="d-flex gap-2">
+            <span
+              id="difficulty"
+              class="badge bg-success-subtle text-success px-3 py-2 rounded-5"
+              >Easy</span
+            >
+            <span
+              id="cuisine"
+              class="badge bg-primary-subtle text-primary px-3 py-2 rounded-5"
+              >Seafood</span
+            >
+          </div>
+
+          <div class="d-flex flex-column mt-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h1 id="title" class="fw-bold mb-0 fs-1 fs-md-3">
+                Honey Garlic Salmon
+              </h1>
+              <div class="d-flex gap-2">
+                <div
+                  class="bg-light-orange d-flex justify-content-center align-items-center rounded-4"
+                  style="width: 50px; height: 50px"
+                >
+                  <i class="fa-solid fa-bookmark text-orange"></i>
+                </div>
+                <div
+                  class="bg-light-orange d-flex justify-content-center align-items-center rounded-4"
+                  style="width: 50px; height: 50px"
+                >
+                  <i class="fa-solid fa-share-nodes text-orange"></i>
+                </div>
+              </div>
+            </div>
+            <p id="description" class="text-muted mt-2">
+              Pan-seared salmon with a sweet and savory glaze
+            </p>
+          </div>
+
+          <div
+            id="recipe-note"
+            class="bg-light-red d-flex align-items-center py-3 rounded-3 border-start border-4 border-danger"
+          >
+            <i
+              class="fa-solid fa-triangle-exclamation me-3 ms-3 text-danger fs-5"
+            ></i>
+            <div class="d-flex flex-column">
+              <h6 class="text-red-alert fw-bold mb-0">
+                Extended Preparation Time
+              </h6>
+              <p id="note-description" class="mb-0 small text-danger">
+                This recipe requires more than 45 minutes to prepare. Plan
+                accordingly!
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-3 mb-3 d-flex justify-content-evenly gap-2 flex-nowrap overflow-auto">
+            <div class="tab-item active d-flex align-items-center gap-1 pb-1 text-secondary" data-target="ingredients-container" style="cursor:pointer;">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="text-nowrap">Ingredients</span>
+            </div>
+            <div class="tab-item d-flex align-items-center gap-1 pb-1 text-secondary" data-target="instructions-container" style="cursor:pointer;">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="text-nowrap">Instructions</span>
+            </div>
+            <div class="tab-item d-flex align-items-center gap-1 pb-1 text-secondary" data-target="nutrition-container" style="cursor:pointer;">
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="text-nowrap">Nutrition</span>
+            </div>
+            <div class="tab-item d-flex align-items-center gap-1 pb-1 text-secondary" data-target="tips-container" style="cursor:pointer;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span class="text-nowrap">Chef's Tips</span>
+            </div>
+          </div>          
+
+          <hr />
+
+          <div id="ingredients-container" class="tab-content">
+            <div
+              id="ingredients"
+              class="d-flex flex-column p-4 rounded-4 bg-light-yellow gap-2 my-box"
+            >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  1
+                </div>
+                <span>2 salmon fillets (6oz each)</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  2
+                </div>
+                <span>3 tablespoons honey</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  3
+                </div>
+                <span>2 tablespoons soy sauce</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  4
+                </div>
+                <span>4 cloves garlic, minced</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  5
+                </div>
+                <span>1 tablespoon olive oil</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  6
+                </div>
+                <span>1 teaspoon fresh ginger, grated</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  7
+                </div>
+                <span>Sesame seeds for garnish</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center bg-orange text-white rounded-circle"
+                  style="width: 25px; height: 25px"
+                >
+                  8
+                </div>
+                <span>Green onions, sliced</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="instructions-container" class="tab-content d-none">
+            <div id="instructions" class="d-flex flex-column gap-2 my-box">
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center p-3 me-2 bg-orange text-white fs-5 fw-bolder rounded-4"
+                  style="width: 45px; height: 45px"
+                >
+                  1
+                </div>
+                <span>Preheat the oven to 375°F (190°C).</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center p-3 me-2 bg-orange text-white fs-5 fw-bolder rounded-4"
+                  style="width: 45px; height: 45px"
+                >
+                  2
+                </div>
+                <span>Mix honey and soy sauce in a bowl.</span>
+              </div>
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <div
+                  class="d-flex justify-content-center align-items-center p-3 me-2 bg-orange text-white fs-5 fw-bolder rounded-4"
+                  style="width: 45px; height: 45px"
+                >
+                  3
+                </div>
+                <span
+                  >Brush salmon with the mixture and bake for 15-20
+                  minutes.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div id="nutrition-container" class="tab-content d-none">
+            <div class="d-flex justify-content-center align-items-start my-box">
+              <div id="nutrition" class="row w-100 g-3">
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div class="p-2 bg-light-orange rounded-2 text-white me-3">
+                      <i class="fa-solid fa-fire text-orange"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Calories</div>
+                      <div class="fw-bolder fs-4">420 kcal</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div class="p-2 bg-light-primary rounded-2 text-white me-3">
+                      <i class="fa-solid fa-dumbbell text-primary"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Protein</div>
+                      <div class="fw-bolder fs-4">26g</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div class="p-2 bg-light-warning rounded-2 text-dark me-3">
+                      <i class="fa-solid fa-wheat-awn text-warning"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Carbohydrates</div>
+                      <div class="fw-bolder fs-4">22g</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div class="p-2 bg-light-danger rounded-2 text-danger me-3">
+                      <i class="fa-solid fa-droplet text-danger"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Fat</div>
+                      <div class="fw-bolder fs-4">26g</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div
+                      class="p-2 bg-light-success rounded-2 text-success me-3"
+                    >
+                      <i class="fa-solid fa-seedling text-success"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Fiber</div>
+                      <div class="fw-bolder fs-4">5g</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-3 bg-light rounded-4">
+                    <div class="p-2 bg-light-pink rounded-2 text-danger me-3">
+                      <i class="fa-solid fa-cube text-pink"></i>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>Sodium</div>
+                      <div class="fw-bolder fs-4">890mg</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tips-container" class="tab-content d-none">
+            <div id="tips" class="d-flex flex-column gap-3 my-box">
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Warning - Be careful with this next step.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Make sure to season salmon evenly.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Do not overcook to keep it juicy.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Do not overcook to keep it juicy.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Do not overcook to keep it juicy.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Do not overcook to keep it juicy.
+                </p>
+              </div>
+              <div
+                class="bg-light-yellow-one d-flex align-items-center p-4 rounded-3 border-start border-4 border-warning"
+              >
+                <i
+                  class="fa-solid fa-circle-check me-2 text-dark-orange fs-5"
+                ></i>
+                <p class="mb-0 text-secondary">
+                  Do not overcook to keep it juicy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <button
+            id="shuffle-btn"
+            class="btn-orange fw-bold mt-2 py-3 px-5 rounded-3"
+          >
+            <i class="fa-solid fa-arrows-rotate me-1"></i>
+            Try Another Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/5f3b6847bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
